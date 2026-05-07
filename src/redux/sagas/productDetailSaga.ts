@@ -1,27 +1,27 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
-import axios from 'axios';
+import { call, put, takeEvery } from "redux-saga/effects";
+import axios from "axios";
 import {
   FETCH_PRODUCT_DETAIL_REQUEST,
   FETCH_PRODUCT_DETAIL_SUCCESS,
-  FETCH_PRODUCT_DETAIL_FAILURE
-} from '../actions/actionTypes';
+  FETCH_PRODUCT_DETAIL_FAILURE,
+} from "../actions/actionTypes";
 
-function* fetchProducts(action:any) {
-  const {id} = action.payload
-    const options = {
-        method: 'GET',
-        url: 'https://unofficial-shein.p.rapidapi.com/products/v2/detail',
-        params: {
-          language: 'en',
-          country: 'US',
-          currency: 'USD',
-          goods_id: `${id}`
-        },
-        headers: {
-          'x-rapidapi-key': 'ffb3187d6dmshfae3f76f893b286p155121jsn108dc4c2eca4',
-          'x-rapidapi-host': 'unofficial-shein.p.rapidapi.com'
-        }
-      };
+function* fetchProducts(action: any) {
+  const { id } = action.payload;
+  const options = {
+    method: "GET",
+    url: "https://unofficial-shein.p.rapidapi.com/products/v2/detail",
+    params: {
+      language: "en",
+      country: "US",
+      currency: "USD",
+      goods_id: `${id}`,
+    },
+    headers: {
+      "x-rapidapi-key": "920334511cmsh37b1b941fd217efp1dc971jsn0a531947ef9e",
+      "x-rapidapi-host": "unofficial-shein.p.rapidapi.com",
+    },
+  };
 
   try {
     //@ts-ignore
